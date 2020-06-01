@@ -8,11 +8,13 @@ Inspiração:
 
 opções do programador:
 	-> tornar o spawner um objeto destrutível para o jogador o poder parar
+	->localização
+	-> raio onde os inimigos podem nascer
 	-> Nº de inimigos
+		-> multiplica com a dificuldade
 	-> Tipo de inimigos
 		-> Probabilidade de certo tipo de inimigos aparecer
 	-> frequência de spawns (waves)
 	-> Nº de waves (1 para spawn normal)
 	-> formações de inimigos(numeros e tipos)
 
-asasa
