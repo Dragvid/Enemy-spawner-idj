@@ -5,29 +5,31 @@ using UnityEngine;
 public class ObjSpawner : MonoBehaviour
 {
     public float radius;
-    //public Vector3 spawnPos;
+    public Vector3 spawnPos;
     private int c ;
-    bool born;
+    bool inProcess;
     public int total;
     Spawner spawner;
     void Start()
     {
         Spawner spawnInfo = GetComponent<Spawner>();
-        //total =spawnInfo.sizeExt;
-        born = false;
+        spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y + Random.Range(0f, radius), transform.position.z + Random.Range(0f, radius));
+        inProcess = false;
         spawner = Spawner.instance;
     }
 
     void FixedUpdate()
     {
-        if (!born)
+        if (!inProcess)
         {
-            spawner.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+            spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y + Random.Range(0f, radius), transform.position.z + Random.Range(0f, radius));
+            //spawner.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+            spawner.SpawnFromPool("Enemy", spawnPos, Quaternion.identity);
             c++;
         }
         if (c == total)
         {
-            born = true;
+            inProcess = true;
         }
 
     }
