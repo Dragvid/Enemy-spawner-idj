@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\IMALIVEMOM.cs" />
     <Compile Include="Assets\Code\ObjSpawner.cs" />
     <Compile Include="Assets\Code\Spawner.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
