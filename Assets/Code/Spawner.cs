@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
         public int size;
     }
 
-
+    //public int sizeExt;
     public static Spawner instance;
     private void Awake()
     {
@@ -24,11 +24,14 @@ public class Spawner : MonoBehaviour
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     void Start()
     {
+        
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
-        foreach(Pool pool in pools)
+        //sizeExt = Pool.size;
+        foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
-            for(int i = 0; i < pool.size; i++)
+            //sizeExt = pool.size;
+            for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
@@ -49,6 +52,13 @@ public class Spawner : MonoBehaviour
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+
+        i_PooledObj pooledObj = objectToSpawn.GetComponent<i_PooledObj>();
+        if (pooledObj != null)
+        {
+            pooledObj.OnObjSpawn();
+        }
+
         poolDictionary[tag].Enqueue(objectToSpawn);
         return objectToSpawn;
     }

@@ -5,16 +5,30 @@ using UnityEngine;
 public class ObjSpawner : MonoBehaviour
 {
     public float radius;
-    
+    //public Vector3 spawnPos;
+    private int c ;
+    bool born;
+    public int total;
     Spawner spawner;
     void Start()
     {
+        Spawner spawnInfo = GetComponent<Spawner>();
+        //total =spawnInfo.sizeExt;
+        born = false;
         spawner = Spawner.instance;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        spawner.SpawnFromPool("enemy", transform.position, Quaternion.identity);
+        if (!born)
+        {
+            spawner.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+            c++;
+        }
+        if (c == total)
+        {
+            born = true;
+        }
+
     }
 }

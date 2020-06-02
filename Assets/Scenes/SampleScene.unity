@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
+  total: 8
 --- !u!4 &67935256
 Transform:
   m_ObjectHideFlags: 0
@@ -367,10 +368,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: enemy
+  - tag: Enemy
     prefab: {fileID: 5561195901348555044, guid: 3f98bb06416016648a16011e43151748,
       type: 3}
-    size: 1
+    size: 55
 --- !u!4 &606953296
 Transform:
   m_ObjectHideFlags: 0

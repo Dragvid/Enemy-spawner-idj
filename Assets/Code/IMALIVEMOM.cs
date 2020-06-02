@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IMALIVEMOM : MonoBehaviour
+public class IMALIVEMOM : MonoBehaviour, i_PooledObj
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public void OnObjSpawn()
+    {        
         Debug.Log("i'm alive mother!");
     }
 }
