@@ -15,12 +15,14 @@ https://www.giantbomb.com/horde-mode/3015-3021/
 opções do programador:
 	-> tornar o spawner um objeto destrutível para o jogador o poder parar
 	->localização(feito)
+		-> ver qual é o mais proximo do jogador
 	-> raio onde os inimigos podem nascer(feito)
 	-> Nº de inimigos(feito)
-		-> multiplica com a dificuldade
-	-> Tipo de inimigos
+		-> multiplica com a dificuldade(feito)
+	-> Tipo de inimigos(feito)
 		-> Probabilidade de certo tipo de inimigos aparecer
+		-> Fazer apenas certos inimigos aparecerem em certas dificuldades(feito)
 	-> frequência de spawns (waves)
 	-> Nº de waves (1 para spawn normal)
-	-> formações de inimigos(numeros e tipos)
+	-> formações de inimigos(numeros e tipos)(feito)
 

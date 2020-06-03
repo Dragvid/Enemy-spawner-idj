@@ -11,9 +11,9 @@ public class Spawner : MonoBehaviour
         public string tag;
         public GameObject prefab;
         public int size;
+        public int difficulty;
     }
 
-    //public int sizeExt;
     public static Spawner instance;
     private void Awake()
     {
@@ -21,45 +21,52 @@ public class Spawner : MonoBehaviour
     }
 
     public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
+    public Dictionary<string, Queue<GameObject>> objpoolDictionary;
+    public Dictionary<string, int> difpoolDictionary;
     void Start()
     {
-        
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
-        //sizeExt = Pool.size;
+        difpoolDictionary = new Dictionary<string, int>();
+        objpoolDictionary = new Dictionary<string, Queue<GameObject>>();
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
-            //sizeExt = pool.size;
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
-            poolDictionary.Add(pool.tag, objectPool);
+            objpoolDictionary.Add(pool.tag, objectPool );
+            difpoolDictionary.Add(pool.tag, pool.difficulty);
         }
     }
 
-    public GameObject SpawnFromPool (string tag, Vector3 position, Quaternion rotation)
+    public GameObject SpawnFromPool (string tag, Vector3 position, int dif, Quaternion rotation)
     {
-        if (!poolDictionary.ContainsKey(tag))
+        if (!objpoolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool w tag "+tag+" doesnt exist");
             return null;
         }
-        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-        objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
-        objectToSpawn.transform.rotation = rotation;
+        if (difpoolDictionary[tag] <= dif) {
+            GameObject objectToSpawn = objpoolDictionary[tag].Dequeue();
+            objectToSpawn.SetActive(true);
+            objectToSpawn.transform.position = position;
+            objectToSpawn.transform.rotation = rotation;
 
-        i_PooledObj pooledObj = objectToSpawn.GetComponent<i_PooledObj>();
-        if (pooledObj != null)
-        {
-            pooledObj.OnObjSpawn();
+            i_PooledObj pooledObj = objectToSpawn.GetComponent<i_PooledObj>();
+            if (pooledObj != null)
+            {
+                pooledObj.OnObjSpawn();
+            }
+            objpoolDictionary[tag].Enqueue(objectToSpawn);
+            return objectToSpawn;
         }
-
-        poolDictionary[tag].Enqueue(objectToSpawn);
-        return objectToSpawn;
+        else
+        {
+            Debug.Log("não nesta dif");
+            return null;
+        }
+        
     }
 }
