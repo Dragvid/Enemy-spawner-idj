@@ -7,12 +7,16 @@ public class ObjSpawner : MonoBehaviour
     public float radius;
     public int difficulty;
     public int objCount;
+    public float waveBreak;
+    public int waveCount;
     private Vector3 spawnPos;
     private int c ;
+    float countdown;
     bool inProcess;
     Spawner spawner;
     void Start()
     {
+        countdown = waveBreak; 
         if(difficulty>0)
         objCount *= difficulty;
         Spawner spawnInfo = GetComponent<Spawner>();
@@ -38,5 +42,19 @@ public class ObjSpawner : MonoBehaviour
             inProcess = false;
         }
 
+    }
+    void Update() {
+        if (waveCount != 0)
+        {
+            countdown -= Time.deltaTime;
+            if (countdown <= 0 && !inProcess)
+            {
+                waveCount--;
+                countdown = waveBreak;
+                c = 0;
+                inProcess = true;
+            }
+        }
+        
     }
 }

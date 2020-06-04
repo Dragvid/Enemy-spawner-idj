@@ -145,6 +145,8 @@ MonoBehaviour:
   radius: 50
   difficulty: 2
   objCount: 1
+  waveBreak: 5
+  waveCount: 3
 --- !u!4 &67935256
 Transform:
   m_ObjectHideFlags: 0
