@@ -3,7 +3,7 @@ Inspiração:
 		->Splatoon 2
 			-> os jogadores estão em uma ilha e inimigos vêm de todas as direções. 
 		->Sunset overdrive
-			-> o objetivo é proteger certos pontos de uma arena de inimigos que vêm de algumas direções diferentes(depende da arena), mas o 
+			-> o objetivo é proteger Scertos pontos de uma arena de inimigos que vêm de algumas direções diferentes(depende da arena), mas o 
 jogador pode por armadilhas para os abrandar.
 		->borderlands 2
 			->inimigos nascem de spawn points defenidos, mas a variedade de tipo de inimigos aumenta com a dificuldade.
@@ -15,7 +15,7 @@ https://www.giantbomb.com/horde-mode/3015-3021/
 opções do programador:
 	-> tornar o spawner um objeto destrutível para o jogador o poder parar
 	->localização(feito)
-		-> ver qual é o mais proximo do jogador
+		-> ver qual é o mais proximo do jogador(feito)
 	-> raio onde os inimigos podem nascer(feito)
 	-> Nº de inimigos(feito)
 		-> multiplica com a dificuldade(feito)

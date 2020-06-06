@@ -12,10 +12,12 @@ public class ObjSpawner : MonoBehaviour
     private Vector3 spawnPos;
     private int c ;
     float countdown;
+    bool triggered;
     bool inProcess;
     Spawner spawner;
     void Start()
     {
+        triggered = false;
         countdown = waveBreak; 
         if(difficulty>0)
         objCount *= difficulty;
@@ -44,6 +46,7 @@ public class ObjSpawner : MonoBehaviour
 
     }
     void Update() {
+        //if (waveCount != 0 && triggered==true)
         if (waveCount != 0)
         {
             countdown -= Time.deltaTime;
@@ -55,6 +58,16 @@ public class ObjSpawner : MonoBehaviour
                 inProcess = true;
             }
         }
-        
+        else
+        {
+            triggered = false;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            triggered = true;
+        }
     }
 }
