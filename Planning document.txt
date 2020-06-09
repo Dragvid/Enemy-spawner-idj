@@ -13,14 +13,14 @@ pode ser ativado pelo jogador, começando um countdown para o ele o spawner dos 
 https://www.giantbomb.com/horde-mode/3015-3021/
 
 opções do programador:
-	-> tornar o spawner um objeto destrutível para o jogador o poder parar
+	-> tornar o spawner um objeto destrutível para o jogador o poder parar(feito)
 	->localização(feito)
 		-> ver qual é o mais proximo do jogador(feito)
 	-> raio onde os inimigos podem nascer(feito)
 	-> Nº de inimigos(feito)
-		-> multiplica com a dificuldade(feito)
+		-> opção de multiplicar com a dificuldade(feito)
 	-> Tipo de inimigos(feito)
-		-> Probabilidade de certo tipo de inimigos aparecer
+		-> Probabilidade de certo tipo de inimigos aparecer(feito)
 		-> Fazer apenas certos inimigos aparecerem em certas dificuldades(feito)
 	-> frequência de spawns (waves)(feito)
 	-> Nº de waves (1 para spawn normal)(feito)

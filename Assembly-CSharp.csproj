@@ -57,8 +57,9 @@
   <ItemGroup>
     <Compile Include="Assets\Code\i_PooledObj.cs" />
     <Compile Include="Assets\Code\IMALIVEMOM.cs" />
-    <Compile Include="Assets\Code\ObjSpawner.cs" />
-    <Compile Include="Assets\Code\Spawner.cs" />
+    <Compile Include="Assets\Code\Spawner\Breakable.cs" />
+    <Compile Include="Assets\Code\Spawner\ObjSpawner.cs" />
+    <Compile Include="Assets\Code\Spawner\Spawner.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/dst30/OneDrive/Documents/UNIVERSIDADE/2º semestre/idj/Enemy spawner idj/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
