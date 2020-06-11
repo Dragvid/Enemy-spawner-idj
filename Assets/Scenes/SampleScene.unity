@@ -149,6 +149,7 @@ MonoBehaviour:
   objCount: 1
   waveBreak: 5
   waveCount: 3
+  infiniteWaves: 0
 --- !u!4 &67935256
 Transform:
   m_ObjectHideFlags: 0

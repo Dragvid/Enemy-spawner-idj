@@ -23,6 +23,7 @@ opções do programador:
 		-> Probabilidade de certo tipo de inimigos aparecer(feito)
 		-> Fazer apenas certos inimigos aparecerem em certas dificuldades(feito)
 	-> frequência de spawns (waves)(feito)
+		->opções de ondas infinitas(feito)
 	-> Nº de waves (1 para spawn normal)(feito)
 	-> formações de inimigos(numeros e tipos)(feito)
 

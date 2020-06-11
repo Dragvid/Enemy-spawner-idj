@@ -9,7 +9,8 @@ public class ObjSpawner : MonoBehaviour
     public bool multiplier;
     public int objCount;
     public float waveBreak;
-    public int waveCount;
+    public float waveCount;
+    public bool infiniteWaves;
     private Vector3 spawnPos;
     private int c ;
     float countdown;
@@ -22,6 +23,10 @@ public class ObjSpawner : MonoBehaviour
         countdown = waveBreak; 
         if(difficulty>0 && multiplier)
             objCount *= difficulty;
+        if (infiniteWaves)
+        {
+            waveCount=Mathf.Infinity;
+        }
         Spawner spawnInfo = GetComponent<Spawner>();
         spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y , transform.position.z + Random.Range(0f, radius));
         inProcess = true;
