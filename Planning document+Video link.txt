@@ -1,0 +1,31 @@
+Inspiração:
+	jogos de hordas/ com modos de horda:
+		->Splatoon 2
+			-> os jogadores estão em uma ilha e inimigos vêm de todas as direções. 
+		->Sunset overdrive
+			-> o objetivo é proteger Scertos pontos de uma arena de inimigos que vêm de algumas direções diferentes(depende da arena), mas o 
+jogador pode por armadilhas para os abrandar.
+		->borderlands 2
+			->inimigos nascem de spawn points defenidos, mas a variedade de tipo de inimigos aumenta com a dificuldade.
+		->Black ice
+			-> o jogador está em uma arena grande com várias divisões e obstáculos como um parque infantil. Cada obstáculo tem um spawner que
+pode ser ativado pelo jogador, começando um countdown para o ele o spawner dos inimigos que nascem dentro de uma copula 
+https://www.giantbomb.com/horde-mode/3015-3021/
+
+opções do programador:
+	-> tornar o spawner um objeto destrutível para o jogador o poder parar(feito)
+	->localização(feito)
+		-> ver qual é o mais proximo do jogador(feito)
+	-> raio onde os inimigos podem nascer(feito)
+	-> Nº de inimigos(feito)
+		-> opção de multiplicar com a dificuldade(feito)
+	-> Tipo de inimigos(feito)
+		-> Probabilidade de certo tipo de inimigos aparecer(feito)
+		-> Fazer apenas certos inimigos aparecerem em certas dificuldades(feito)
+	-> frequência de spawns (waves)(feito)
+		->opções de ondas infinitas(feito)
+	-> Nº de waves (1 para spawn normal)(feito)
+	-> formações de inimigos(numeros e tipos)(feito)
+
+Demonstração + explicação 
+https://youtu.be/VlL8Jj7exhw
