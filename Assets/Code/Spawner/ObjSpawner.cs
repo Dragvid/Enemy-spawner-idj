@@ -27,21 +27,22 @@ public class ObjSpawner : MonoBehaviour
         {
             waveCount=Mathf.Infinity;
         }
-        Spawner spawnInfo = GetComponent<Spawner>();
+        
         spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y , transform.position.z + Random.Range(0f, radius));
         inProcess = true;
         spawner = Spawner.instance;
-        //Debug.Log(spawnInfo.dictionarySize);
     }
 
     void FixedUpdate()
     {
+        Spawner spawnInfo = GetComponent<Spawner>();
         if (inProcess)
         {
-            spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y + Random.Range(0f, radius), transform.position.z + Random.Range(0f, radius));
-            spawner.SpawnFromPool("Enemy", spawnPos, Random.Range(0, 100), difficulty, Quaternion.identity);
-            spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y + Random.Range(0f, radius), transform.position.z + Random.Range(0f, radius));
-            spawner.SpawnFromPool("Enemy2", spawnPos, Random.Range(0, 100), difficulty, Quaternion.identity);
+            for(int i=0; i< spawnInfo.objpoolDictionary.Count; i++)
+            {
+                spawnPos = new Vector3(transform.position.x + Random.Range(0f, radius), transform.position.y, transform.position.z + Random.Range(0f, radius));
+                spawner.SpawnFromPool(spawnInfo.tags[i], spawnPos, Random.Range(0, 100), difficulty, Quaternion.identity);
+            }
             c++;
         }
         if (c >= objCount)

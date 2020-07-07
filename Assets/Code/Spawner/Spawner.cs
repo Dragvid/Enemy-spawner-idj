@@ -17,12 +17,14 @@ public class Spawner : MonoBehaviour
     }
 
     public static Spawner instance;
+    private int objindex=0;//contar o index do objeto para registar a tag
     private void Awake()
     {
         instance = this;
     }
 
     public List<Pool> pools;
+    public string[] tags = new string[100];
     public Dictionary<string, Queue<GameObject>> objpoolDictionary;
     public Dictionary<string, int> difpoolDictionary;
     public Dictionary<string, int> minProbPoolDictionary;
@@ -45,12 +47,13 @@ public class Spawner : MonoBehaviour
             difpoolDictionary.Add(pool.tag, pool.difficulty);
             maxProbPoolDictionary.Add(pool.tag, pool.maxProb);
             minProbPoolDictionary.Add(pool.tag, pool.minProb);
+            tags[objindex] = pool.tag;
+            objindex++;
         }
     }
 
     public GameObject SpawnFromPool (string tag, Vector3 position, int spawnProb, int dif, Quaternion rotation)
     {
-        //int spawnProb = UnityEngine.Random.Range(0, 100);
         if (!objpoolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool w tag "+tag+" doesnt exist");
@@ -81,7 +84,7 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("no spawn");
+            //Debug.Log("no spawn");
             return null;
         }
     }
